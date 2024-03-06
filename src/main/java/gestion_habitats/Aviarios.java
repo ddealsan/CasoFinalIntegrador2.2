@@ -1,4 +1,5 @@
 package gestion_habitats;
 
-public class avirios {
+public class Aviarios {
+
 }

@@ -1,45 +1,41 @@
-package gestion_animales;
+public abstract class Ave extends Animal {
 
-public abstract class Animal {
+    private String colorPlumaje;
+    private String tipoPico;
 
-    private String nombre;
-    private String especie;
-    private int edad;
-
-    public Animal(String nombre, String especie, int edad) {
-        this.nombre = nombre;
-        this.especie = especie;
-        this.edad = edad;
+    public Ave(String nombre, String especie, int edad, String colorPlumaje, String tipoPico) {
+        super(nombre, especie, edad);
+        this.colorPlumaje = colorPlumaje;
+        this.tipoPico = tipoPico;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getColorPlumaje() {
+        return colorPlumaje;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setColorPlumaje(String colorPlumaje) {
+        this.colorPlumaje = colorPlumaje;
     }
 
-    public String getEspecie() {
-        return especie;
+    public String getTipoPico() {
+        return tipoPico;
     }
 
-    public void setEspecie(String especie) {
-        this.especie = especie;
+    public void setTipoPico(String tipoPico) {
+        this.tipoPico = tipoPico;
     }
 
-    public int getEdad() {
-        return edad;
+    @Override
+    public abstract void respirar();
+
+    @Override
+    public void reproducirse() {
+        System.out.println("El ave " + nombre + " pone huevos para reproducirse.");
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    @Override
+    public void moverse() {
+        System.out.println("El ave " + nombre + " vuela.");
     }
-
-    public abstract void comer();
-
-    public abstract void dormir();
-
-    public abstract void jugar();
 
 }

@@ -26,5 +26,6 @@ public abstract class Acuática extends Animal {
     public void setPoseeEscamas(boolean poseeEscamas) {
         this.poseeEscamas = poseeEscamas;
     }
+    public abstract void reproducirse ();
 
 }

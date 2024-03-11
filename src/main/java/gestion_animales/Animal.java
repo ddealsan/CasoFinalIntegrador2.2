@@ -2,7 +2,7 @@ package gestion_animales;
 
 public abstract class Animal {
 
-    private String nombre;
+    public String nombre;
     private String especie;
     private int edad;
 

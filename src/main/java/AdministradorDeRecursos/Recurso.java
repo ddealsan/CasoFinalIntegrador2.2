@@ -3,7 +3,7 @@ package AdministradorDeRecursos;
 import java.util.*;
 
 // Clase para representar un recurso genérico
-class Recurso {
+public class Recurso {
     private String nombre;
     private int cantidadDisponible;
 

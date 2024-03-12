@@ -9,6 +9,7 @@ public class Pedido {
         this.items = new HashMap<>();
     }
 
+
     public void agregarItem(Recurso recurso, int cantidad) {
         items.put(recurso, cantidad);
     }

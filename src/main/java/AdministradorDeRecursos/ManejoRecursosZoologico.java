@@ -9,7 +9,7 @@ public class ManejoRecursosZoologico {
 
     public ManejoRecursosZoologico() {
         this.inventario = new HashMap<>();
-        this.pedidos = new ArrayList<>();
+        this.pedidos = new ArrayList<>();//
         this.proveedores = new ArrayList<>();
     }
 

@@ -1,13 +1,24 @@
 package MantenimientoYSeguridad;
 
-// Clase para representar una cámara
 public class Camera {
     private String ubicacion;
     private boolean activada;
 
     public Camera(String ubicacion) {
         this.ubicacion = ubicacion;
-        this.activada = false; // Por defecto, la cámara está desactivada
+        this.activada = false;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public boolean isActivada() {
+        return activada;
     }
 
     public void activar() {
@@ -17,6 +28,4 @@ public class Camera {
     public void desactivar() {
         activada = false;
     }
-
-    // Otros métodos relacionados con el funcionamiento de la cámara
 }

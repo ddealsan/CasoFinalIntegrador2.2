@@ -11,6 +11,9 @@ public abstract class Habitat {
         this.ubicacion = ubicacion;
     }
 
+    public Habitat(String nombre, double tamaño) {
+    }
+
     public String getNombre() {
         return nombre;
     }

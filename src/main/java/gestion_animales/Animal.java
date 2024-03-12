@@ -46,4 +46,8 @@ public abstract class Animal {
 
     public abstract void moverse();
 
+    public String getTipo() {
+
+        return null;
+    }
 }

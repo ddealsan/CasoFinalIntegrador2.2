@@ -1,13 +1,28 @@
 package MantenimientoYSeguridad;
 
-// Clase para representar un sensor
 public class Sensor {
     private String ubicacion;
     private boolean activado;
 
     public Sensor(String ubicacion) {
         this.ubicacion = ubicacion;
-        this.activado = false; // Por defecto, el sensor está desactivado
+        this.activado = false;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public boolean isActivado() {
+        return activado;
+    }
+
+    public void setActivado(boolean activado) {
+        this.activado = activado;
     }
 
     public void activar() {
@@ -17,6 +32,4 @@ public class Sensor {
     public void desactivar() {
         activado = false;
     }
-
-    // Otros métodos relacionados con el funcionamiento del sensor
 }

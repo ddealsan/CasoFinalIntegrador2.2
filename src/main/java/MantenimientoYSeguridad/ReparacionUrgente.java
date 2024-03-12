@@ -2,7 +2,6 @@ package MantenimientoYSeguridad;
 
 import java.util.Date;
 
-// Clase para representar una reparación urgente
 public class ReparacionUrgente {
     private String nombreInstalacion;
     private Date fecha;
@@ -15,4 +14,36 @@ public class ReparacionUrgente {
     }
 
     // Getters y setters
+    public String getNombreInstalacion() {
+        return nombreInstalacion;
+    }
+
+    public void setNombreInstalacion(String nombreInstalacion) {
+        this.nombreInstalacion = nombreInstalacion;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "ReparacionUrgente{" +
+                "nombreInstalacion='" + nombreInstalacion + '\'' +
+                ", fecha=" + fecha +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
+    }
 }

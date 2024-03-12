@@ -31,7 +31,7 @@ public class MostrarAves {
 
     private void mostrarDetallesLoro() {
         // Aquí podríamos crear una instancia de un loro y mostrar sus características únicas
-        Loro loro = new Loro("NombreLoro", "ColorPlumaje", 5, "Puede hablar");
+        Loro loro = new Loro("Moises", "Amarillo y verde", 7, "Puede hablar");
         System.out.println("=== Detalles del Loro ===");
         System.out.println("Nombre: " + loro.getNombre());
         System.out.println("Edad: " + loro.getEdad());

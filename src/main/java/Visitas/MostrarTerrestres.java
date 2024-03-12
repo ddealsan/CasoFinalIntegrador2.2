@@ -30,7 +30,7 @@ public class MostrarTerrestres {
 
     private void mostrarDetallesLoboSiberiano() {
         // Aquí podríamos crear una instancia de un lobo siberiano y mostrar sus características únicas
-        LoboSiberiano loboSiberiano = new LoboSiberiano("NombreLoboSiberiano", "ColorPelaje", 8, true);
+        LoboSiberiano loboSiberiano = new LoboSiberiano("Francisco", "Blanco", 14, true);
         System.out.println("=== Detalles del Lobo Siberiano ===");
         System.out.println("Nombre: " + loboSiberiano.getNombre());
         System.out.println("Edad: " + loboSiberiano.getEdad());

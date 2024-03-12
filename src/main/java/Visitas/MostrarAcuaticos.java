@@ -30,7 +30,7 @@ public class MostrarAcuaticos {
 
     private void mostrarDetallesDelfin() {
         // Aquí podríamos crear una instancia de un delfín y mostrar sus características únicas
-        Delfín delfin = new Delfín("NombreDelfin", "TamañoDelfin", 10, true);
+        Delfín delfin = new Delfín("Serafin", "2Metros", 10, true);
         System.out.println("=== Detalles del Delfín ===");
         System.out.println("Nombre: " + delfin.getNombre());
         System.out.println("Edad: " + delfin.getEdad());

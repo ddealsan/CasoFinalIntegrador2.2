@@ -1,4 +1,5 @@
 package org.example;
+import java.io.*;
 import java.util.Scanner;
 import java.util.Date;
 import java.util.List;
@@ -10,6 +11,8 @@ import Visitas.*;
 import gestion_animales.*;
 
 public class Main {
+    private static final String NOMBRE_ARCHIVO = "animales.txt";
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -215,7 +218,11 @@ public class Main {
     }
 
     private static void registrarAnimalNuevo() {
+        // Crear un objeto de la clase RegistrarNuevoAnimal
         RegistrarNuevoAnimal registroAnimales = new RegistrarNuevoAnimal();
+
+        // Cargar los animales desde el archivo al iniciar el programa
+        cargarAnimalesDesdeArchivo(registroAnimales);
 
         // Pedir al usuario que ingrese los detalles del animal
         Scanner scanner = new Scanner(System.in);
@@ -233,10 +240,40 @@ public class Main {
         // Registrar el nuevo animal con los detalles proporcionados por el usuario
         registroAnimales.registrarAnimal(nombre, especie, edad, tipo);
 
+        // Guardar los animales en el archivo
+        guardarAnimalesEnArchivo(registroAnimales);
+
         // Mostrar los animales registrados
         registroAnimales.mostrarAnimalesRegistrados();
 
         // Cerrar el scanner
         scanner.close();
+    }
+
+    private static void cargarAnimalesDesdeArchivo(RegistrarNuevoAnimal registroAnimales) {
+        try (BufferedReader br = new BufferedReader(new FileReader(NOMBRE_ARCHIVO))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(",");
+                String nombre = partes[0];
+                String especie = partes[1];
+                int edad = Integer.parseInt(partes[2]);
+                String tipo = partes[3];
+                registroAnimales.registrarAnimal(nombre, especie, edad, tipo);
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+    }
+
+    private static void guardarAnimalesEnArchivo(RegistrarNuevoAnimal registroAnimales) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(NOMBRE_ARCHIVO))) {
+            for (Animal animal : registroAnimales.getAnimalesRegistrados()) {
+                bw.write(animal.getNombre() + "," + animal.getEspecie() + "," + animal.getEdad() + "," + animal.getTipo());
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error al escribir en el archivo: " + e.getMessage());
+        }
     }
 }

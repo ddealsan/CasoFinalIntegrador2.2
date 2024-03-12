@@ -11,6 +11,10 @@ public abstract class Terrestre extends Animal {
         this.tipoPelajePiel = tipoPelajePiel;
     }
 
+    public Terrestre(String nombre, String especie, double peso) {
+    }
+
+
     public int getNumeroPatas() {
         return numeroPatas;
     }

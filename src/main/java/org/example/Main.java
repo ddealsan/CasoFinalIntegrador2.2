@@ -3,9 +3,11 @@ import java.util.Scanner;
 import java.util.Date;
 import java.util.List;
 
+import gestion_habitats.*;
 import MantenimientoYSeguridad.*;
 import AdministradorDeRecursos.*;
 import Visitas.*;
+import gestion_animales.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -192,12 +194,49 @@ public class Main {
     }
 
     private static void mostrarDatosGestionHabitats() {
-        // Aquí iría la lógica para mostrar los datos de Gestión de Hábitats
-        System.out.println("Mostrando datos de Gestión de Hábitats...");
+        // Crear una instancia del sistema de monitoreo
+        SistemaMonitoreo sistemaMonitoreo = new SistemaMonitoreo();
+
+        // Registrar temperaturas, humedades y limpiezas para diferentes hábitats
+        sistemaMonitoreo.registrarTemperatura("Jaula de leones", 28.5);
+        sistemaMonitoreo.registrarHumedad("Jaula de leones", 60.0);
+        sistemaMonitoreo.registrarLimpieza("Jaula de leones", true);
+
+        sistemaMonitoreo.registrarTemperatura("Estanque de tortugas", 24.0);
+        sistemaMonitoreo.registrarHumedad("Estanque de tortugas", 80.0);
+        sistemaMonitoreo.registrarLimpieza("Estanque de tortugas", false);
+
+        // Obtener y mostrar datos de un hábitat específico
+        String habitat = "Jaula de leones";
+        System.out.println("Datos del hábitat: " + habitat);
+        System.out.println("Temperatura: " + sistemaMonitoreo.obtenerTemperatura(habitat));
+        System.out.println("Humedad: " + sistemaMonitoreo.obtenerHumedad(habitat));
+        System.out.println("Limpieza: " + (sistemaMonitoreo.estaLimpio(habitat) ? "Sí" : "No"));
     }
 
     private static void registrarAnimalNuevo() {
-        // Aquí iría la lógica para registrar un animal nuevo
-        System.out.println("Registrando animal nuevo...");
+        RegistrarNuevoAnimal registroAnimales = new RegistrarNuevoAnimal();
+
+        // Pedir al usuario que ingrese los detalles del animal
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Registro de Nuevo Animal");
+        System.out.print("Nombre: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Especie: ");
+        String especie = scanner.nextLine();
+        System.out.print("Edad: ");
+        int edad = scanner.nextInt();
+        scanner.nextLine(); // Consumir el salto de línea
+        System.out.print("Tipo (acuatico/terrestre/ave): ");
+        String tipo = scanner.nextLine();
+
+        // Registrar el nuevo animal con los detalles proporcionados por el usuario
+        registroAnimales.registrarAnimal(nombre, especie, edad, tipo);
+
+        // Mostrar los animales registrados
+        registroAnimales.mostrarAnimalesRegistrados();
+
+        // Cerrar el scanner
+        scanner.close();
     }
 }

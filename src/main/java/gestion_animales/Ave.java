@@ -11,6 +11,10 @@ public abstract class Ave extends Animal {
         this.tipoPico = tipoPico;
     }
 
+    public Ave(String nombre, String especie, double peso) {
+        super();
+    }
+
     public String getColorPlumaje() {
         return colorPlumaje;
     }

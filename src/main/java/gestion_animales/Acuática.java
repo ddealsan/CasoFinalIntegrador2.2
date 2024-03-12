@@ -11,6 +11,10 @@ public abstract class Acuática extends Animal {
         this.poseeEscamas = poseeEscamas;
     }
 
+    public Acuática(String nombre, String especie, double peso) {
+    }
+
+
     public String getTipoAletas() {
         return tipoAletas;
     }
